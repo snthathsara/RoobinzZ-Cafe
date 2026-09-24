@@ -15,7 +15,7 @@ export function initNavbar() {
 
   // Move blob to target element and ensure text color sync
   function setBlobTarget(targetElement) {
-    if (!targetElement) {
+    if (!targetElement || window.innerWidth <= 900 || track.offsetParent === null) {
       blob.style.opacity = '0';
       return;
     }
@@ -91,8 +91,12 @@ export function initNavbar() {
   }, 100);
 
   window.addEventListener('resize', () => {
-    if (!isHovering && activeLink) {
-      setBlobTarget(activeLink);
+    if (window.innerWidth > 900) {
+      if (!isHovering && activeLink) {
+        setBlobTarget(activeLink);
+      }
+    } else {
+      blob.style.opacity = '0';
     }
   });
 
@@ -134,12 +138,13 @@ export function initNavbar() {
   }, { passive: true });
 
   // Mobile Drawer Toggle
-  initMobileNav();
+  initMobileNav(sections);
 }
 
-function initMobileNav() {
+function initMobileNav(sections = []) {
   const toggleBtn = document.getElementById('mobile-toggle-btn');
   const drawer = document.getElementById('mobile-menu-drawer');
+  const backdrop = document.getElementById('mobile-drawer-backdrop');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta');
 
   if (!toggleBtn || !drawer) return;
@@ -147,13 +152,47 @@ function initMobileNav() {
   function toggleDrawer(open) {
     const isOpen = open !== undefined ? open : !drawer.classList.contains('is-open');
     drawer.classList.toggle('is-open', isOpen);
+    toggleBtn.classList.toggle('is-active', isOpen);
+    if (backdrop) backdrop.classList.toggle('is-active', isOpen);
     toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    document.body.classList.toggle('nav-drawer-open', isOpen);
+
+    if (isOpen) {
+      syncActiveMobileLink();
+    }
+  }
+
+  function syncActiveMobileLink() {
+    const scrollPosition = window.scrollY + 200;
+    let currentId = 'hero';
+    for (const section of sections) {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPosition >= top && scrollPosition < top + height) {
+        currentId = section.getAttribute('id');
+        break;
+      }
+    }
+    mobileLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${currentId}`) {
+        link.classList.add('is-active');
+      } else {
+        link.classList.remove('is-active');
+      }
+    });
   }
 
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     toggleDrawer();
   });
+
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      toggleDrawer(false);
+    });
+  }
 
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -162,7 +201,19 @@ function initMobileNav() {
   });
 
   document.addEventListener('click', (e) => {
-    if (drawer.classList.contains('is-open') && !drawer.contains(e.target) && e.target !== toggleBtn) {
+    if (drawer.classList.contains('is-open') && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+      toggleDrawer(false);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      toggleDrawer(false);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && drawer.classList.contains('is-open')) {
       toggleDrawer(false);
     }
   });

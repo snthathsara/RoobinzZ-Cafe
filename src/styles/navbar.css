@@ -10,6 +10,7 @@
   z-index: 1000;
   pointer-events: none;
   padding: 0 16px;
+  transition: top 0.25s ease, padding 0.25s ease;
 }
 
 .nav-capsule-wrapper {
@@ -24,7 +25,7 @@
   border: 1px solid var(--nav-border);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  transition: var(--theme-transition), transform 0.3s ease;
+  transition: var(--theme-transition), transform 0.3s ease, width 0.3s ease, padding 0.25s ease;
 }
 
 /* Brand Link */
@@ -39,6 +40,7 @@
   letter-spacing: -0.02em;
   border-radius: var(--radius-full);
   text-decoration: none;
+  white-space: nowrap;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -53,6 +55,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  transition: width 0.2s ease, height 0.2s ease;
 }
 
 .nav-brand-icon svg {
@@ -66,6 +70,7 @@
   background: var(--nav-divider-color);
   margin: 0 2px;
   transition: background-color 0.25s ease;
+  flex-shrink: 0;
 }
 
 /* Nav Links Group with Morphing Blob */
@@ -76,6 +81,8 @@
   background: transparent;
   border-radius: var(--radius-full);
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Fluid Morphing Blob with exact spring physics */
@@ -111,7 +118,7 @@
   color: var(--nav-btn-color);
   text-decoration: none;
   border-radius: var(--radius-full);
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, padding 0.2s ease;
   white-space: nowrap;
   user-select: none;
   position: relative;
@@ -133,6 +140,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 /* Theme Toggle Button */
@@ -145,7 +153,10 @@
   border-radius: var(--radius-full);
   color: var(--nav-btn-color);
   background: var(--nav-control-bg);
+  border: none;
+  cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .theme-toggle-btn:hover {
@@ -171,7 +182,9 @@
   background: var(--btn-primary-bg);
   border-radius: var(--radius-full);
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s var(--spring-ease);
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s var(--spring-ease), padding 0.2s ease;
+  flex-shrink: 0;
 }
 
 .nav-cta-btn:hover {
@@ -179,7 +192,7 @@
   transform: scale(1.03);
 }
 
-/* Mobile Toggle */
+/* Mobile Toggle Hamburger */
 .mobile-toggle {
   display: none;
   align-items: center;
@@ -189,69 +202,254 @@
   border-radius: var(--radius-full);
   color: var(--nav-btn-color);
   background: var(--nav-control-bg);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  position: relative;
+  z-index: 1001;
+  flex-shrink: 0;
 }
 
 .mobile-toggle:hover {
   color: var(--nav-btn-hover);
+  background: var(--nav-control-hover);
 }
 
-/* Mobile Menu Backdrop & Drawer */
-.mobile-menu-drawer {
-  display: none;
-  position: fixed;
-  top: 76px;
-  left: 20px;
-  right: 20px;
-  background: var(--bg-surface);
-  border-radius: 20px;
-  padding: 24px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
-  z-index: 999;
-  flex-direction: column;
-  gap: 14px;
+.mobile-toggle line {
+  transform-origin: center;
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease;
+}
+
+.mobile-toggle.is-active .line-1 {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-toggle.is-active .line-2 {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: scaleX(0);
+}
+
+.mobile-toggle.is-active .line-3 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile Menu Backdrop */
+.mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 13, 7, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), var(--theme-transition);
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.mobile-drawer-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Mobile Menu Drawer */
+.mobile-menu-drawer {
+  position: fixed;
+  top: 72px;
+  left: 14px;
+  right: 14px;
+  max-width: 500px;
+  margin: 0 auto;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--bg-surface);
+  border-radius: 24px;
+  padding: 20px 22px 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 24px 48px rgba(38, 20, 13, 0.22);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px) scale(0.98);
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .mobile-menu-drawer.is-open {
-  display: flex;
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
+  transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
 .mobile-nav-link {
   color: var(--text-primary);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
-  padding: 10px 0;
+  padding: 11px 4px;
   border-bottom: 1px solid var(--border-subtle);
-  transition: color 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link.is-active {
-  color: var(--accent-green);
+  color: var(--brand-orange);
+  padding-left: 4px;
+}
+
+.mobile-nav-link.mobile-nav-whatsapp {
+  color: var(--brand-orange);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: none;
+  padding-top: 14px;
 }
 
 .mobile-nav-cta {
   text-align: center;
   background: var(--btn-primary-bg);
   color: var(--btn-primary-text);
-  padding: 12px;
+  padding: 13px 20px;
   border-radius: var(--radius-full);
-  font-weight: 600;
-  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 4px;
+  box-shadow: 0 4px 14px rgba(184, 105, 80, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-@media (max-width: 900px) {
-  .nav-links-track {
-    display: none;
+.mobile-nav-cta:hover {
+  background: var(--accent-green-soft);
+  transform: translateY(-1px);
+}
+
+/* Prevent background scroll when mobile menu is active */
+body.nav-drawer-open {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Laptop & Tablet Landscape (901px – 1140px) */
+@media (min-width: 901px) and (max-width: 1140px) {
+  .nav-capsule-wrapper {
+    padding: 4px 6px;
+    gap: 4px;
   }
+  .nav-brand {
+    padding: 6px 10px 6px 8px;
+    font-size: 13.5px;
+  }
+  .nav-link {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+  .nav-cta-btn {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Tablet Portrait & Mobile (<= 900px) */
+@media (max-width: 900px) {
+  .site-header {
+    top: 12px;
+    padding: 0 12px;
+  }
+
+  .nav-capsule-wrapper {
+    width: 100%;
+    max-width: 580px;
+    justify-content: space-between;
+    padding: 6px 8px 6px 12px;
+  }
+
+  /* Completely hide desktop track and dividers on mobile */
+  .nav-links-track,
+  .nav-divider {
+    display: none !important;
+  }
+
   .mobile-toggle {
     display: flex;
+  }
+
+  .nav-brand {
+    padding: 4px 6px 4px 0;
+    font-size: 14.5px;
+  }
+
+  .nav-controls {
+    gap: 6px;
+  }
+
+  .nav-cta-btn {
+    padding: 7px 14px;
+    font-size: 12.5px;
+  }
+}
+
+/* Compact Mobile Screens (<= 480px) */
+@media (max-width: 480px) {
+  .site-header {
+    top: 10px;
+    padding: 0 10px;
+  }
+
+  .nav-capsule-wrapper {
+    padding: 5px 6px 5px 10px;
+  }
+
+  .nav-brand {
+    font-size: 13.5px;
+    gap: 6px;
+  }
+
+  .nav-brand-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Hide the capsule's Reserve button on small phones since the drawer has a large CTA button */
+  .nav-controls .nav-cta-btn {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-menu-drawer {
+    top: 64px;
+    left: 10px;
+    right: 10px;
+    padding: 18px 18px 20px;
+    border-radius: 20px;
+  }
+}
+
+/* Ultra-Compact Screens (<= 340px) */
+@media (max-width: 340px) {
+  .nav-brand span {
+    font-size: 12.5px;
   }
 }
