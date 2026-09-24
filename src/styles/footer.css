@@ -1,12 +1,13 @@
-/* Editorial Warm Espresso Brown Luxury Footer (Warbler's Cafe) */
+/* Editorial Luxury Footer (RoobinzZ Cafe & Restaurant) */
 .site-footer {
   padding-top: 70px;
   padding-bottom: 45px;
   background: var(--banner-gradient);
-  color: var(--brand-mint);
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
-  transition: background 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .footer-top-row {
@@ -29,9 +30,10 @@
   font-family: var(--font-display);
   font-size: 26px;
   font-weight: 800;
-  color: var(--brand-mint);
+  color: var(--text-primary);
   letter-spacing: -0.02em;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer-logo svg {
@@ -43,7 +45,7 @@
 .footer-tagline {
   font-size: 14.5px;
   line-height: 1.6;
-  color: rgba(250, 246, 240, 0.85);
+  color: var(--text-secondary);
   max-width: 320px;
 }
 
@@ -52,8 +54,9 @@
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--brand-sage);
+  color: var(--brand-orange);
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .footer-links-list {
@@ -64,7 +67,7 @@
 
 .footer-link {
   font-size: 14px;
-  color: rgba(250, 246, 240, 0.8);
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -81,6 +84,12 @@
   gap: 14px;
 }
 
+.footer-newsletter-desc {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 .newsletter-form {
   display: flex;
   gap: 8px;
@@ -90,28 +99,29 @@
   flex: 1;
   padding: 10px 16px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(250, 246, 240, 0.25);
-  background: rgba(250, 246, 240, 0.08);
-  color: var(--brand-mint);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-primary);
   font-size: 13.5px;
   outline: none;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  box-shadow: 0 2px 6px rgba(38, 20, 13, 0.04);
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .newsletter-input::placeholder {
-  color: rgba(250, 246, 240, 0.5);
+  color: var(--text-muted);
 }
 
 .newsletter-input:focus {
   border-color: var(--brand-orange);
-  background: rgba(250, 246, 240, 0.15);
+  box-shadow: 0 0 0 3px rgba(184, 105, 80, 0.15);
 }
 
 .newsletter-btn {
   padding: 10px 20px;
   border-radius: var(--radius-full);
   background: var(--brand-orange);
-  color: #FAF6F0;
+  color: #FFFFFF;
   font-size: 13.5px;
   font-weight: 700;
   transition: all 0.2s ease;
@@ -127,8 +137,7 @@
 
 .newsletter-note {
   font-size: 12px;
-  color: var(--brand-sage);
-  opacity: 0.9;
+  color: var(--text-muted);
 }
 
 /* Footer Bottom Bar */
@@ -137,9 +146,9 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 32px;
-  border-top: 1px solid rgba(250, 246, 240, 0.18);
+  border-top: 1px solid var(--border-color);
   font-size: 13px;
-  color: rgba(250, 246, 240, 0.75);
+  color: var(--text-muted);
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -148,7 +157,7 @@
   font-family: var(--font-mono);
   font-size: 11.5px;
   letter-spacing: 0.05em;
-  color: var(--brand-sage);
+  color: var(--text-muted);
 }
 
 .back-to-top-btn {
@@ -157,20 +166,65 @@
   gap: 6px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--brand-mint);
+  color: var(--text-primary);
   padding: 8px 16px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(250, 246, 240, 0.3);
-  background: rgba(250, 246, 240, 0.1);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  box-shadow: 0 2px 6px rgba(38, 20, 13, 0.04);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .back-to-top-btn:hover {
-  background: rgba(250, 246, 240, 0.22);
+  background: var(--bg-pill-hover);
   border-color: var(--brand-orange);
   color: var(--brand-orange);
   transform: translateY(-2px);
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .site-footer {
+  background: #140905;
+  color: var(--brand-mint);
+  border-color: rgba(223, 197, 184, 0.14);
+}
+
+[data-theme="dark"] .footer-logo {
+  color: var(--brand-mint);
+}
+
+[data-theme="dark"] .footer-tagline {
+  color: rgba(250, 246, 240, 0.75);
+}
+
+[data-theme="dark"] .footer-newsletter-desc {
+  color: rgba(250, 246, 240, 0.75);
+}
+
+[data-theme="dark"] .footer-link {
+  color: rgba(250, 246, 240, 0.75);
+}
+
+[data-theme="dark"] .footer-bottom-row {
+  border-color: rgba(223, 197, 184, 0.14);
+  color: rgba(250, 246, 240, 0.6);
+}
+
+[data-theme="dark"] .footer-coords {
+  color: rgba(250, 246, 240, 0.6);
+}
+
+[data-theme="dark"] .newsletter-input {
+  background: rgba(250, 246, 240, 0.08);
+  border-color: rgba(250, 246, 240, 0.2);
+  color: var(--brand-mint);
+}
+
+[data-theme="dark"] .back-to-top-btn {
+  background: rgba(250, 246, 240, 0.08);
+  border-color: rgba(250, 246, 240, 0.2);
+  color: var(--brand-mint);
 }
 
 @media (max-width: 960px) {

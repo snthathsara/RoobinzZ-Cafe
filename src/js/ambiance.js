@@ -1,8 +1,6 @@
-// Live Cafe Status Manager for Warbler’s Cafe (Kandy)
-// Google Maps Operating Hours:
-// - Monday: 8:30 AM – 5:00 PM
-// - Tuesday – Saturday: 8:30 AM – 6:00 PM
-// - Sunday: Closed
+// Live Cafe Status Manager for RoobinzZ Cafe & Restaurant (Kandy)
+// Operating Hours:
+// - Daily (Monday – Sunday): 11:00 AM – 11:00 PM
 
 export function initAmbiance() {
   updateCafeStatus();
@@ -54,46 +52,30 @@ export function updateCafeStatus() {
 
   if (!statusLabel) return;
 
-  const { weekday, decimalTime } = getSriLankaTime();
+  const { decimalTime } = getSriLankaTime();
 
-  const openTime = 8.5; // 8:30 AM
+  const openTime = 11.0; // 11:00 AM
+  const closeTime = 23.0; // 11:00 PM
 
   let isOpen = false;
   let label = 'Closed';
   let sub = '';
 
-  if (weekday === 'Sun') {
-    // Sunday Closed All Day
+  if (decimalTime < openTime) {
+    // Early morning before opening at 11:00 AM
     isOpen = false;
     label = 'Closed';
-    sub = 'Opens Monday at 8:30 AM';
+    sub = 'Opens at 11:00 AM today in Kandy';
+  } else if (decimalTime < closeTime) {
+    // Open during regular operating hours
+    isOpen = true;
+    label = 'Open Today';
+    sub = 'Closes at 11:00 PM in Kandy';
   } else {
-    // Monday closes at 5:00 PM (17.0), Tue - Sat closes at 6:00 PM (18.0)
-    const closeTime = weekday === 'Mon' ? 17.0 : 18.0;
-    const closeStr = weekday === 'Mon' ? '5:00 PM' : '6:00 PM';
-
-    if (decimalTime < openTime) {
-      // Early morning before opening
-      isOpen = false;
-      label = 'Closed';
-      sub = 'Opens at 8:30 AM today';
-    } else if (decimalTime < closeTime) {
-      // Open during regular operating hours
-      isOpen = true;
-      label = 'Open Today';
-      sub = `Closes at ${closeStr}`;
-    } else {
-      // Closed in the evening after closing hours
-      isOpen = false;
-      label = 'Closed';
-      if (weekday === 'Sat') {
-        sub = 'Opens Monday at 8:30 AM';
-      } else if (weekday === 'Mon') {
-        sub = 'Opens Tuesday at 8:30 AM';
-      } else {
-        sub = 'Opens at 8:30 AM tomorrow';
-      }
-    }
+    // Closed in the late night after 11:00 PM
+    isOpen = false;
+    label = 'Closed';
+    sub = 'Opens at 11:00 AM tomorrow';
   }
 
   // Update UI Elements

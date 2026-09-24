@@ -1,84 +1,92 @@
 :root {
   /* ==========================================================================
-     Warbler’s Cafe — Warm Brown, Cream White & Burnt Terracotta Theme
-     Western • Fusion • Sri Lankan | Breakfast, Brunch & Lunch | Heart of Kandy
+     RoobinzZ Cafe & Restaurant — Light Pastel Brown, White & Lighter Brown/Pink Theme
+     ESTD 1955 · 164/A, Anagarika Dharmapala Mawatha, Kandy
+     Step into a world of comfort and flavor! Delicious food & warm vibes ✨
      Inspired by:
-     - Rich Espresso & Roasted Coffee Brown (#23120B, #351B0F, #4E2A19)
-     - Warm Oat Milk Cream & Clean White (#FAF6F0, #FFFFFF, #F4ECE1)
-     - Vibrant Burnt Terracotta / Roasted Amber (#E05A2B, #C84C20)
+     - Soft Creamy White & Oat Pastel Page Base (#FAF6F2, #FFFFFF, #F5EAE1)
+     - Light Pastel Brown (#A66E58, #945943, #824734)
+     - Lighter Brown / Blush Pink (#E8CFC5, #F5E8E0, #DFC5B8, #F8EFE9)
+     - Deep Roasted Mocha & Cacao for Razor-Sharp Typography (#26140D, #3A1E13)
+     - Warm Terracotta-Rose Accent Glow (#B86950, #C9755B)
      ========================================================================== */
 
-  /* Light Theme (Oat Milk Cream, Clean Off-White & Dark Roast Espresso) */
-  --bg-page: #FAF6F0;
-  --bg-page-gradient: linear-gradient(160deg, #FDFBF7 0%, #FAF6F0 45%, #F4ECE1 100%);
+  /* Light Theme (Oat Cream White, Light Pastel Brown & Soft Brown-Pink Blush) */
+  --bg-page: #FAF6F2;
+  --bg-page-gradient: linear-gradient(160deg, #FDFBF8 0%, #FAF5F0 40%, #F5ECE3 100%);
   --bg-surface: #FFFFFF;
-  --bg-surface-subtle: #F4ECE1;
-  --bg-surface-card: #FDFCFA;
-  --bg-pill: #EDE2D3;
-  --bg-pill-hover: #E2D3BF;
+  --bg-surface-subtle: #F6ECE3;
+  --bg-surface-card: #FFFCF9;
+  --bg-pill: #F2E5DC;
+  --bg-pill-hover: #E7D5C9;
 
-  --text-primary: #23120B;
-  --text-secondary: #5C3826;
-  --text-muted: #8A6753;
+  --text-primary: #26140D;
+  --text-secondary: #5E3D2F;
+  --text-muted: #8E6D5E;
 
-  --border-color: #DCCBBA;
-  --border-subtle: #E8DACB;
-  --border-dark: #23120B;
+  --border-color: #E2D2C4;
+  --border-subtle: #ECE1D6;
+  --border-dark: #26140D;
 
   /* Brand Palette Tokens */
   --brand-deep: #1A0D07;
-  --brand-pine: #23120B;
-  --brand-forest: #351B0F;
-  --brand-emerald: #E05A2B;
-  --brand-sage: #D9C3AE;
-  --brand-mint: #FAF6F0;
+  --brand-pine: #26140D;
+  --brand-forest: #3A1E13;
+  --brand-emerald: #B86950;
+  --brand-sage: #DFC5B8;
+  --brand-mint: #FAF5F0;
+
+  /* Pastel Brown & Brown/Pink Brand Accents */
+  --brand-pastel-brown: #A66E58;
+  --brand-pastel-pink: #E8CFC5;
+  --brand-pastel-blush: #F5E8E0;
 
   /* Aliased Core Tokens */
-  --brand-cobalt: #351B0F;
-  --brand-cobalt-hover: #23120B;
-  --brand-cobalt-light: #F4ECE1;
-  --brand-cobalt-rgb: 53, 27, 15;
+  --brand-cobalt: #3A1E13;
+  --brand-cobalt-hover: #26140D;
+  --brand-cobalt-light: #F5ECE3;
+  --brand-cobalt-rgb: 58, 30, 19;
 
-  --brand-purple: #E05A2B;
-  --brand-purple-hover: #C84C20;
-  --brand-purple-light: #FAF6F0;
-  --brand-purple-rgb: 224, 90, 43;
+  --brand-purple: #B86950;
+  --brand-purple-hover: #A0553E;
+  --brand-purple-light: #FAF5F0;
+  --brand-purple-rgb: 184, 105, 80;
 
-  --brand-orange: #E05A2B;
-  --brand-orange-hover: #C84C20;
-  --brand-brown: #351B0F;
-  --brand-brown-light: #4E2A19;
+  --brand-orange: #B86950;
+  --brand-orange-hover: #A0553E;
+  --brand-brown: #3A1E13;
+  --brand-brown-light: #5E3D2F;
 
-  --accent-green: #E05A2B;
-  --accent-green-soft: #D9C3AE;
-  --accent-lamp: #E05A2B;
-  --accent-lamp-glow: rgba(224, 90, 43, 0.22);
+  --accent-green: #B86950;
+  --accent-green-soft: #DFC5B8;
+  --accent-lamp: #B86950;
+  --accent-lamp-glow: rgba(184, 105, 80, 0.22);
 
-  --btn-primary-bg: #351B0F;
-  --btn-primary-text: #FAF6F0;
+  --btn-primary-bg: #3A1E13;
+  --btn-primary-text: #FAF6F2;
   --btn-secondary-bg: transparent;
-  --btn-secondary-text: #351B0F;
-  --btn-secondary-border: #351B0F;
+  --btn-secondary-text: #3A1E13;
+  --btn-secondary-border: #3A1E13;
 
-  /* Atmospheric Gradients */
-  --banner-gradient: linear-gradient(135deg, #1A0D07 0%, #29150C 40%, #381E12 75%, #4E2A19 100%);
-  --banner-gradient-subtle: linear-gradient(145deg, #29150C 0%, #381E12 55%, #4A2818 100%);
-  --ambient-beam: radial-gradient(ellipse at 15% 10%, rgba(224, 90, 43, 0.15) 0%, transparent 60%);
+  /* Atmospheric Gradients (Light Pastel Cream & Blush Brown/Pink) */
+  --banner-gradient: linear-gradient(145deg, #F8EEE7 0%, #EFE1D7 50%, #F7EFE9 100%);
+  --banner-gradient-subtle: linear-gradient(145deg, #FDFBF8 0%, #F5EAE1 50%, #FAF3EE 100%);
+  --ambient-beam: radial-gradient(ellipse at 15% 10%, rgba(184, 105, 80, 0.12) 0%, transparent 60%);
 
   /* Floating Navbar Tokens — Light Mode */
-  --nav-bar-bg: rgba(250, 246, 240, 0.94);
-  --nav-border: rgba(53, 27, 15, 0.14);
-  --nav-brand-color: #23120B;
-  --nav-btn-color: #5C3826;
-  --nav-btn-hover: #23120B;
-  --nav-btn-active-bg: #351B0F;
-  --nav-btn-active-text: #FAF6F0;
-  --nav-divider-color: rgba(53, 27, 15, 0.14);
-  --nav-control-bg: rgba(53, 27, 15, 0.06);
-  --nav-control-hover: rgba(53, 27, 15, 0.12);
-  --nav-shadow: 0 10px 30px rgba(35, 18, 11, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --nav-bar-bg: rgba(250, 246, 242, 0.94);
+  --nav-border: rgba(58, 30, 19, 0.12);
+  --nav-brand-color: #26140D;
+  --nav-btn-color: #5E3D2F;
+  --nav-btn-hover: #26140D;
+  --nav-btn-active-bg: #3A1E13;
+  --nav-btn-active-text: #FAF6F2;
+  --nav-divider-color: rgba(58, 30, 19, 0.12);
+  --nav-control-bg: rgba(58, 30, 19, 0.05);
+  --nav-control-hover: rgba(58, 30, 19, 0.11);
+  --nav-shadow: 0 10px 30px rgba(38, 20, 13, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
 
-  /* Typography Stacks */
+  /* Typography Stacks (Preserved from site) */
   --font-display: 'Fraunces', 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Fraunces', 'Playfair Display', Georgia, serif;
@@ -112,65 +120,65 @@
 }
 
 /* ==========================================================================
-   Dark Theme (Dark Roast Espresso, Smoked Cacao & Warm Amber Glow)
+   Dark Theme (Dark Roast Cacao, Smoked Mocha & Soft Pastel Rose-Amber Glow)
    ========================================================================== */
 [data-theme="dark"] {
-  --bg-page: #140A06;
-  --bg-page-gradient: linear-gradient(150deg, #1C0F08 0%, #140A06 50%, #0D0603 100%);
-  --bg-surface: #1E1009;
-  --bg-surface-subtle: #29160D;
-  --bg-surface-card: #22120A;
-  --bg-pill: #311A0F;
-  --bg-pill-hover: #3E2114;
+  --bg-page: #150B07;
+  --bg-page-gradient: linear-gradient(150deg, #1D0F0A 0%, #150B07 50%, #0E0704 100%);
+  --bg-surface: #1F110A;
+  --bg-surface-subtle: #2B170E;
+  --bg-surface-card: #23130C;
+  --bg-pill: #331A10;
+  --bg-pill-hover: #422216;
 
-  --text-primary: #FAF6F0;
-  --text-secondary: #D9C3AE;
-  --text-muted: #9E836F;
+  --text-primary: #FAF6F2;
+  --text-secondary: #DFC5B8;
+  --text-muted: #A18274;
 
-  --border-color: #3D2214;
-  --border-subtle: #2C180E;
-  --border-dark: #FAF6F0;
+  --border-color: #3E2115;
+  --border-subtle: #2E180E;
+  --border-dark: #FAF6F2;
 
-  --brand-cobalt: #D9C3AE;
-  --brand-cobalt-hover: #FAF6F0;
-  --brand-cobalt-light: #29160D;
-  --brand-cobalt-rgb: 217, 195, 174;
+  --brand-cobalt: #DFC5B8;
+  --brand-cobalt-hover: #FAF6F2;
+  --brand-cobalt-light: #2B170E;
+  --brand-cobalt-rgb: 223, 197, 184;
 
-  --brand-purple: #E05A2B;
-  --brand-purple-hover: #FF7445;
-  --brand-purple-light: #FAF6F0;
-  --brand-purple-rgb: 224, 90, 43;
+  --brand-purple: #D47F67;
+  --brand-purple-hover: #E8957E;
+  --brand-purple-light: #FAF6F2;
+  --brand-purple-rgb: 212, 127, 103;
 
-  --brand-orange: #E05A2B;
-  --brand-orange-hover: #FF7445;
-  --brand-brown: #381E12;
-  --brand-brown-light: #FAF6F0;
+  --brand-orange: #D47F67;
+  --brand-orange-hover: #E8957E;
+  --brand-brown: #3C1E12;
+  --brand-brown-light: #FAF6F2;
 
-  --accent-green: #E05A2B;
-  --accent-green-soft: #D9C3AE;
-  --accent-lamp: #E05A2B;
-  --accent-lamp-glow: rgba(224, 90, 43, 0.3);
+  --accent-green: #D47F67;
+  --accent-green-soft: #DFC5B8;
+  --accent-lamp: #D47F67;
+  --accent-lamp-glow: rgba(212, 127, 103, 0.28);
 
-  --btn-primary-bg: #E05A2B;
-  --btn-primary-text: #140A06;
+  --btn-primary-bg: #D47F67;
+  --btn-primary-text: #150B07;
   --btn-secondary-bg: transparent;
-  --btn-secondary-text: #FAF6F0;
-  --btn-secondary-border: #E05A2B;
+  --btn-secondary-text: #FAF6F2;
+  --btn-secondary-border: #D47F67;
 
-  --banner-gradient: linear-gradient(135deg, #0D0603 0%, #1A0D07 45%, #29150C 80%, #3D2113 100%);
-  --banner-gradient-subtle: linear-gradient(145deg, #1A0D07 0%, #29150C 50%, #381E12 100%);
-  --ambient-beam: radial-gradient(ellipse at 15% 10%, rgba(224, 90, 43, 0.2) 0%, transparent 60%);
+  --banner-gradient: linear-gradient(135deg, #0E0704 0%, #1C0F09 45%, #2B170F 80%, #3F2115 100%);
+  --banner-gradient-subtle: linear-gradient(145deg, #1C0F09 0%, #2B170F 50%, #3B1E13 100%);
+  --ambient-beam: radial-gradient(ellipse at 15% 10%, rgba(212, 127, 103, 0.18) 0%, transparent 60%);
 
   /* Floating Navbar Tokens — Dark Mode */
-  --nav-bar-bg: rgba(30, 16, 9, 0.94);
-  --nav-border: rgba(217, 195, 174, 0.16);
-  --nav-brand-color: #FAF6F0;
-  --nav-btn-color: #D9C3AE;
-  --nav-btn-hover: #FAF6F0;
-  --nav-btn-active-bg: #E05A2B;
-  --nav-btn-active-text: #140A06;
-  --nav-divider-color: rgba(217, 195, 174, 0.16);
-  --nav-control-bg: rgba(217, 195, 174, 0.08);
-  --nav-control-hover: rgba(217, 195, 174, 0.16);
-  --nav-shadow: 0 10px 32px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(224, 90, 43, 0.12);
+  --nav-bar-bg: rgba(31, 17, 10, 0.94);
+  --nav-border: rgba(223, 197, 184, 0.14);
+  --nav-brand-color: #FAF6F2;
+  --nav-btn-color: #DFC5B8;
+  --nav-btn-hover: #FAF6F2;
+  --nav-btn-active-bg: #D47F67;
+  --nav-btn-active-text: #150B07;
+  --nav-divider-color: rgba(223, 197, 184, 0.14);
+  --nav-control-bg: rgba(223, 197, 184, 0.08);
+  --nav-control-hover: rgba(223, 197, 184, 0.16);
+  --nav-shadow: 0 10px 32px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(212, 127, 103, 0.12);
 }

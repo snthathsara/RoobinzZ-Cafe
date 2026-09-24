@@ -1,4 +1,4 @@
-const THEME_STORAGE_KEY = 'warblers-theme-preference';
+const THEME_STORAGE_KEY = 'roobinzz-theme-preference';
 
 export function initTheme() {
   const toggleBtn = document.getElementById('theme-toggle-btn');

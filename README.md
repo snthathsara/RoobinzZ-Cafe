@@ -1,41 +1,47 @@
-# Warbler’s Cafe — Official Web Experience
+# RoobinzZ Cafe & Restaurant — Official Web Experience
 
-An editorial, high-end web experience crafted for **Warbler’s Cafe**, located in the **Heart of Kandy, Sri Lanka** (108, D.S. Senanayake Veediya).
+An editorial, high-end web experience crafted for **RoobinzZ Cafe & Restaurant**, located in the **Heart of Kandy, Sri Lanka** (164/A, Anagarika Dharmapala Mawatha, ESTD 1955).
 
-**Western • Fusion • Sri Lankan | Flavorful food for every craving | Breakfast, Brunch & Lunch**
+> *"Step into a world of comfort and flavor! Serving delicious food and warm vibes ✨"*
 
 ---
 
 ## ✨ Design & Brand Highlights
 
-- **Warm Coffee Brown, Cream White & Burnt Terracotta Theme**:
-  - Warm Espresso Brown (`#23120B`, `#351B0F`), Warm Oat Milk Cream (`#FAF6F0`, `#F4ECE1`), and Vibrant Burnt Terracotta / Roasted Amber (`#E05A2B`).
-  - Warm, eye-friendly cream surfaces with deep dark-roast banners and footer.
+- **Light Pastel Brown, Cream White & Lighter Brown/Pink Theme**:
+  - Soft Creamy White & Oat Pastel Page Base (`#FAF6F2`, `#FFFFFF`, `#FDFBF8`).
+  - Light Pastel Brown (`#A66E58`, `#B86950`) & Soft Blush Pink/Tan (`#E8CFC5`, `#F5E8E0`, `#F8EEE7`).
+  - Deep Roasted Mocha (`#26140D`) reserved strictly for high-contrast editorial typography and dark mode.
 - **Editorial Typography & Visual Hierarchy**:
   - Chunky retro display serif powered by **Fraunces** with stacked repeating typography.
-  - "Coffee is a language in itself" typography ribbon matching Instagram visual branding.
-  - "IT'S BRUNCH O'CLOCK" bold graphic banner.
-  - Transparent cast-iron Shakshuka skillet cutout floating over the hero headline.
-- **Instagram Story Highlights Bar**:
-  - Sips ❤️, Ambience ❤️, Plates ❤️, Moments ❤️ with rich espresso circles, cream line-art icons, and interactive scroll triggers.
-- **Western • Fusion • Sri Lankan Menu**:
-  - Signature Shakshuka Skillet, Traditional Shepherd’s Pie, Toasted Brioche Chicken Melt, Sri Lankan Sunrise Bowls.
-  - Specialty Espresso Bar: Warbler's Iced Caramel Latte, Signature Iced Spanish Latte, Flat White & Cortado, Cold Brew Tonic.
-  - Fresh Bakes & Juices: Golden Brioche French Toast, Velvety Passionfruit Cheesecake, Tropical Passion & Mint Cooler.
-- **Direct WhatsApp Chat & Table Reservations**:
-  - Connected directly to Warbler’s Cafe official line (`+94 74 101 0540`).
-  - Instagram connection ([@cafewarblers](https://www.instagram.com/cafewarblers/)).
-  - Accurate Kandy operating hours: Mon - Sat | 8:30 AM - 6:00 PM (Closed Sunday).
-- **Light & Dark Theme Engine**:
-  - Warm Oat Milk Cream light mode default with Dark Roast Espresso dark mode.
+  - "Step into a world of comfort and flavor!" typographic ribbon.
+  - "STEP INTO WARM VIBES & FLAVOR" graphic banner.
+  - Neural AI segmented, transparent Chicken Volcano Kottu skillet cutout floating over the hero display.
+- **Sequential Instagram Story Highlights Bar**:
+  - **Vibe ✨** $\rightarrow$ Scrolls to Warm Vibes & Heritage
+  - **Menu 🍽** $\rightarrow$ Scrolls to Curated Food & Drink Menu
+  - **Dishes** $\rightarrow$ Scrolls to Celebrated Specialties
+  - **Trust the Taste** $\rightarrow$ Scrolls to Customer Reviews & Testimonials
+- **Curated 4-3-4-3 Editorial Menu**:
+  - **Mains**: RoobinzZ Special Chicken Volcano Kottu, Creamy Seafood Pasta, Hot Battered Cuttlefish (HBC), Classic Fish & Chips.
+  - **Snacks & Quick Bites**: RoobinzZ Loaded Cheesy Fries, Sri Lankan Black Chicken Submarine, Golden Crispy Kochchi Bites.
+  - **Coffee & Shakes**: RoobinzZ Special Nutella Shake, RoobinzZ Special Oreo Shake, Signature Hot Chocolate, Classic Ceylon Milk Coffee.
+  - **Beverages & Coolers**: Chilled Rose Lassi, Tropical Mango Lassi, Fresh Ginger Ceylon Tea.
+- **Direct Reservations & Social Connect**:
+  - Connected directly to WhatsApp table bookings & takeaway (`+94 71 542 6918`).
+  - Instagram connection ([@roobinzzcafe](https://www.instagram.com/roobinzzcafe/)).
+  - Facebook page ([RoobinzZ Cafe and Restaurant](http://facebook.com/people/RoobinzZ-Cafe-and-Restaurant/61557264122261/)).
+  - Daily operating hours: 11:00 AM – 11:00 PM (7 Days a Week).
+- **Adaptive Light & Dark Theme**:
+  - Light pastel aesthetic default with seamless high-contrast dark mode.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Markup & Styling**: Semantic HTML5, Modular Modern CSS (CSS Variables, clamp(), Flexbox, CSS Grid)
+- **Markup & Styling**: Semantic HTML5, Modular Modern CSS (CSS Custom Properties, clamp(), Flexbox, CSS Grid)
 - **Tooling & Bundler**: [Vite](https://vitejs.dev/)
-- **Icons**: Custom Handcrafted SVGs & Lucide
+- **Icons**: Custom Handcrafted SVG Line Icons & Lucide
 - **Typography**: Google Fonts (Fraunces, Inter, JetBrains Mono)
 
 ---

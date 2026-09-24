@@ -1,5 +1,5 @@
 {
-  "name": "warblers-cafe",
+  "name": "roobinzz-cafe",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "sharp": "^0.35.4",
     "vite": "^6.2.0"
   },
   "dependencies": {
